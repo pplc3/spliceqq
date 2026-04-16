@@ -32,7 +32,7 @@
             "text-muted-foreground flex-shrink-0"
         )}><Settings /></Dialog.Trigger
     >
-    <Dialog.Content>
+    <Dialog.Content class="max-w-4xl">
         <Dialog.Header>
             <Dialog.Title>Settings</Dialog.Title>
         </Dialog.Header>
@@ -162,8 +162,27 @@
                     </Label>
                 </div>
             </div>
+            <div class="flex flex-col gap-2">
+                <Label for="audioEnhancementToggle">Audio Enhancement</Label>
+                <p class="text-muted-foreground text-sm">
+                    Fill in missing high end audio data (Note: the algorithm will not remake the original audio, but will just approximate missing high frequencies.)
+                </p>
+                <div class="flex items-center gap-2">
+                    <Switch
+                        id="audioEnhancementToggle"
+                        bind:checked={config.audio_enhance}
+                        onchange={() => {
+                            config.audio_enhance = !config.audio_enhance;
+                            saveConfig()
+                        }}
+                    />
+                    <Label for="audioEnhancementToggle" class="cursor-pointer">
+                        {config.audio_enhance ? "Enabled" : "Disabled"}
+                    </Label>
+                </div>
+            </div>
         </div>
-        <Dialog.Footer>
+        <Dialog.Footer class="w-full flex !flex-row !justify-start">
             <div
                 class="text-muted-foreground inline-flex items-center text-nowrap"
             >
@@ -190,10 +209,20 @@
                 >
                 &nbsp;by&nbsp;
                 <ExternalLink
-                    to="https://github.com/Robert-K"
-                    class="text-primary">Kosro,</ExternalLink
+                    to="https://github.com/pplc3"
+                    class="text-primary">pplc3</ExternalLink
                 >
-                &nbsp;inspired by&nbsp;
+                , originally developed by&nbsp;
+                <ExternalLink
+                    to="https://github.com/Robert-K"
+                    class="text-primary">Kosro</ExternalLink
+                >
+                , and&nbsp;
+                <ExternalLink
+                    to="https://github.com/VincentAdittama"
+                    class="text-primary">VincentAdittama</ExternalLink
+                >
+                , inspired by&nbsp;
                 <ExternalLink
                     to="https://github.com/ascpixi"
                     class="text-primary">ascpixi</ExternalLink

@@ -1,37 +1,37 @@
 {
-    "$schema": "https://schema.tauri.app/config/2",
-    "productName": "Splice-Tab",
-    "version": "../package.json",
-    "identifier": "de.kosro.splice-tab",
-    "build": {
-        "beforeDevCommand": "pnpm run dev",
-        "devUrl": "http://localhost:1337",
-        "beforeBuildCommand": "pnpm run build",
-        "frontendDist": "../build"
-    },
-    "app": {
-        "windows": [
-            {
-                "title": "Splice-Tab",
-                "width": 800,
-                "height": 600
-            }
-        ],
-        "security": {
-            "csp": {
-                "connect-src": "'self' ipc: blob: tauri://localhost http://ipc.localhost http://tauri.localhost https://*.splice.com https://surfaces-graphql.splice.com https://spliceproduction.s3.*.amazonaws.com/** https://*.amazonaws.com/spliceblob.splice.com/** https://splice-res.cloudinary.com/**"
-            }
-        }
-    },
-    "bundle": {
-        "active": true,
-        "targets": "all",
-        "icon": [
-            "icons/32x32.png",
-            "icons/128x128.png",
-            "icons/128x128@2x.png",
-            "icons/icon.icns",
-            "icons/icon.ico"
-        ]
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "spliceqq",
+  "version": "../package.json",
+  "identifier": "com.pplc3.spliceqq",
+  "build": {
+    "beforeDevCommand": "pnpm run dev",
+    "devUrl": "http://localhost:1337",
+    "beforeBuildCommand": "pnpm run build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "spliceqq",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": {
+        "connect-src": "'self' ipc: blob: tauri://localhost http://ipc.localhost http://tauri.localhost https://*.splice.com https://surfaces-graphql.splice.com https://spliceproduction.s3.*.amazonaws.com/** https://*.amazonaws.com/spliceblob.splice.com/** https://splice-res.cloudinary.com/**"
+      }
     }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
 }
